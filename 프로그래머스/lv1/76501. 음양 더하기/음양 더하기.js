@@ -1,12 +1,7 @@
 function solution(absolutes, signs) {
-    for (let i = 0; i < absolutes.length; i++) {
-        if (!signs[i]) {
-            absolutes[i] = Number("-" + absolutes[i])
-        }
+    let result = 0;
+    for (let i = 0; i< absolutes.length; i++) {
+        result = (signs[i] === true) ? result + absolutes[i] : result - absolutes[i]
     }
-    let result = absolutes.reduce(function(sum, currValue) {
-        return sum + currValue
-    })
-
     return result
 }
