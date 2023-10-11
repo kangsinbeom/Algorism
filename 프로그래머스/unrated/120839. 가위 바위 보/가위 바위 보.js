@@ -11,6 +11,11 @@ function winner(string) {
 
 
 function solution(rsp) {
-    const answer = [...rsp].map(x => winner(x)).join("")
+    const obj = {
+        2 : "0",
+        0: "5",
+        5: "2"
+    }
+    const answer = [...rsp].map(x => obj[x]).join("")
     return answer;
 }
