@@ -8,7 +8,7 @@ function solution(letter) {
     '-.--':'y','--..':'z'
 }
     
-    const answer = letter.split(" ").map(x=> morse[x]).join("");
+    const answer = letter.split(" ").reduce((accur, curr) => accur + morse[curr], "")
     
     
     return answer;
