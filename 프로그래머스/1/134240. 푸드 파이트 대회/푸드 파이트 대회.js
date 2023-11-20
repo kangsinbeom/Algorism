@@ -1,15 +1,8 @@
 function solution(food) {
-    const array = food
-    const answer = [0]
-    while (array.length) {
-        const i = array.length - 1
-        const number = array.pop()
-        const addNumber = Math.floor(number / 2)
-        if (addNumber) {
-         for (let index = 0; index < addNumber; index++) {
-             answer.push(i) && answer.unshift(i)
-         }   
-        }
+    let answer = ''
+    for (let i = 1; i < food.length; i++) {
+        answer += String(i).repeat(Math.floor(food[i] /2))
     }
-    return answer.join("");
+    
+    return answer + "0" + [...answer].reverse().join("");
 }
