@@ -1,16 +1,12 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().trim();
-const N = +Number(input);
-let result = '';
+const fs = require('fs')
+const input = fs.readFileSync('/dev/stdin').toString().trim()
 
-for (let i = 0; i < N; i++) {
-    let space = '';
-    space += ' '.repeat(i);
-    
-    for (let j = N-i; j > N-i-1; j--) {
-        let star = '';
-        star += '*'.repeat(j);
-        result += space + star + '\n';
-    }
+const solution = (input) => {
+  let result = []
+  for(let i = 0; i<input; i++){
+    result[i] = " ".repeat(i) + '*'.repeat(input-i)
+  }
+  return result.join('\n')
 }
 
-console.log(result);
+console.log(solution(input))
