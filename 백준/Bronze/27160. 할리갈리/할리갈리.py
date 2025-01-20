@@ -1,16 +1,13 @@
-N = int(input())
+import sys
+input = sys.stdin.readline
 
-def solution_1(N):
-    dict_1 = {}
-    for i in range(N):
-        fruit, amount = input().split(" ")
-        amount = int(amount)
-        if fruit in dict_1:  # keys()를 사용할 필요 없이 바로 확인
-            dict_1[fruit] += amount
-        else:
-            dict_1[fruit] = amount
-    if 5 in dict_1.values(): 
-        return 'YES' 
-    return 'NO'
+d = {}
+for _ in range(int(input())):
+    s, x = input().split()
+    d[s] = d.get(s, 0) + int(x)
 
-print(solution_1(N))
+for n in d:
+    if d[n] == 5:
+        print('YES')
+        exit()
+print('NO')
