@@ -1,4 +1,3 @@
-
 N = int(input())
 
 def solution_1(N):
@@ -6,8 +5,7 @@ def solution_1(N):
     for i in range(N):
         fruit, amount = input().split(" ")
         amount = int(amount)
-        keys = dict_1.keys()
-        if fruit in keys:
+        if fruit in dict_1:  # keys()를 사용할 필요 없이 바로 확인
             dict_1[fruit] += amount
         else:
             dict_1[fruit] = amount
@@ -16,5 +14,3 @@ def solution_1(N):
     return 'NO'
 
 print(solution_1(N))
-
-    
